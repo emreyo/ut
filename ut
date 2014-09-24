@@ -1,0 +1,7 @@
+#/bin/bash
+
+URL="http://www.youtube.com/results?filters=video&lclk=video&search_query="
+ARG=$(echo $1 | sed 's/ /+/g')
+
+link=$(curl -s "$URL$ARG" | grep "watch?v=" -m 1 | cut -d\/ -f2 | cut -d\" -f1)
+youtube-dl --extract-audio --audio-format mp3 "http://www.youtube.com/$link"
