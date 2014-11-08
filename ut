@@ -1,5 +1,11 @@
 #/bin/bash
 
+if [ $# -eq 0 ]; then
+	echo "* need some sort of string to search"
+	echo "* input song title, artist name..."
+	exit 1
+fi
+
 URL="http://www.youtube.com/results?filters=video&lclk=video&search_query="
 ARG=$(echo $1 | sed 's/ /+/g')
 
