@@ -25,3 +25,5 @@ i hope this helps someone.
 
 * check for args
 * menu? 
+* use getopts
+* get -k flag, for example
